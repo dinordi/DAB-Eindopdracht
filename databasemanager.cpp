@@ -5,10 +5,10 @@ databaseManager::databaseManager()
     db = QSqlDatabase::addDatabase("QMYSQL");
     qry = new QSqlQuery;
 
-    db.setHostName("s927.whserver.nl");
-    db.setDatabaseName("p13799_databases");
-    db.setUserName("p13799_databases");
-    db.setPassword("databases");
+    db.setHostName("localhost");
+    db.setDatabaseName("DAB-1");
+    db.setUserName("root");
+    db.setPassword("12345678");
     if(!db.open())
     {
         qDebug() << "Connection failed: " << db.lastError().text();
@@ -22,6 +22,27 @@ databaseManager::databaseManager()
     else{
         qDebug() << "Connected to database with hostname: " << db.hostName();
         this->connectedDB = true;
+
+        qDebug() << "String query: ";
+        QString query =
+            "CREATE VIEW NFS AS "
+            "SELECT strMerk, strSerie, strNaam, intVermogenPK, intVermogenkW, strStad, strLand "
+            "FROM "
+            "    tblland "
+            "LEFT JOIN "
+            "    tblstad ON tblland.IDLand = tblstad.IDLand "
+            "LEFT JOIN "
+            "    tblmerk ON tblstad.IDStad = tblmerk.IDstad "
+            "LEFT JOIN "
+            "    tblserie ON tblmerk.IDMerk = tblserie.IDMerk "
+            "LEFT JOIN "
+            "    tblserietype ON tblserie.IDSerie = tblserietype.IDSerie "
+            "LEFT JOIN "
+            "    tbltype ON tblserietype.IDType = tbltype.IDType "
+            "ORDER BY strMerk ASC ";
+        qDebug() << query;
+        qry->prepare(query);
+        qry->exec();
     }
 }
 
@@ -47,6 +68,7 @@ databaseManager::databaseManager(QString host, QString user, QString pass, QStri
     else{
         qDebug() << "Connected to database with hostname: " << db.hostName();
         this->connectedDB = true;
+
     }
 }
 

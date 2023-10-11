@@ -168,18 +168,8 @@
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QGridLayout" name="gridLayout">
-              <item row="1" column="1">
-               <widget class="QListView" name="listViewMerken"/>
-              </item>
-              <item row="0" column="2">
-               <widget class="QLabel" name="lblTypes">
-                <property name="text">
-                 <string>Types        /     Stad          /       Land</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="3">
-               <widget class="QListView" name="listViewSeries"/>
+              <item row="1" column="2">
+               <widget class="QListView" name="listViewTypes"/>
               </item>
               <item row="0" column="1">
                <widget class="QLabel" name="lblMerken">
@@ -188,15 +178,39 @@
                 </property>
                </widget>
               </item>
-              <item row="0" column="3">
+              <item row="0" column="5">
                <widget class="QLabel" name="lblMerken_3">
                 <property name="text">
                  <string>Serie</string>
                 </property>
                </widget>
               </item>
-              <item row="1" column="2">
-               <widget class="QListView" name="listViewTypes"/>
+              <item row="0" column="2">
+               <widget class="QLabel" name="lblTypes">
+                <property name="text">
+                 <string>Types</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QListView" name="listViewMerken"/>
+              </item>
+              <item row="0" column="3">
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>Stad</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4">
+               <widget class="QLabel" name="label_6">
+                <property name="text">
+                 <string>Land</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
+               <widget class="QTableView" name="tableView"/>
               </item>
              </layout>
             </widget>
@@ -230,7 +244,7 @@
             <item row="0" column="1">
              <widget class="QLineEdit" name="lineHost">
               <property name="text">
-               <string>s927.whserver.nl</string>
+               <string>localhost</string>
               </property>
              </widget>
             </item>
@@ -244,7 +258,7 @@
             <item row="1" column="1">
              <widget class="QLineEdit" name="lineDatabase">
               <property name="text">
-               <string>p13799_databases</string>
+               <string>DAB-1</string>
               </property>
              </widget>
             </item>
@@ -258,7 +272,7 @@
             <item row="2" column="1">
              <widget class="QLineEdit" name="lineUser">
               <property name="text">
-               <string>p13799_databases</string>
+               <string>root</string>
               </property>
              </widget>
             </item>
@@ -272,7 +286,7 @@
             <item row="3" column="1">
              <widget class="QLineEdit" name="linePass">
               <property name="text">
-               <string>databases</string>
+               <string>12345678</string>
               </property>
              </widget>
             </item>

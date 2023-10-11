@@ -24,10 +24,17 @@ private slots:
 
     void on_listViewMerken_clicked(const QModelIndex &index);
 
+    void on_tableViewSerie_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     databaseManager *db;
     void load_table();
+    QString vermogenPK;
+    QString vermogenkW;
+    QString pathCarImage;
+    QString pathLogoImage;
+    void radioButtonToggled();
 
 };
 #endif // MAINWINDOW_H

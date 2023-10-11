@@ -23,7 +23,6 @@ databaseManager::databaseManager()
         qDebug() << "Connected to database with hostname: " << db.hostName();
         this->connectedDB = true;
 
-        qDebug() << "String query: ";
         QString query =
             "CREATE VIEW NFS AS "
             "SELECT strMerk, strSerie, strNaam, intVermogenPK, intVermogenkW, strStad, strLand "
@@ -40,7 +39,6 @@ databaseManager::databaseManager()
             "LEFT JOIN "
             "    tbltype ON tblserietype.IDType = tbltype.IDType "
             "ORDER BY strMerk ASC ";
-        qDebug() << query;
         qry->prepare(query);
         qry->exec();
     }
@@ -68,7 +66,24 @@ databaseManager::databaseManager(QString host, QString user, QString pass, QStri
     else{
         qDebug() << "Connected to database with hostname: " << db.hostName();
         this->connectedDB = true;
-
+        QString query =
+            "CREATE VIEW NFS AS "
+            "SELECT strMerk, strSerie, strNaam, intVermogenPK, intVermogenkW, strStad, strLand, strLogo, autofoto "
+            "FROM "
+            "    tblland "
+            "LEFT JOIN "
+            "    tblstad ON tblland.IDLand = tblstad.IDLand "
+            "LEFT JOIN "
+            "    tblmerk ON tblstad.IDStad = tblmerk.IDstad "
+            "LEFT JOIN "
+            "    tblserie ON tblmerk.IDMerk = tblserie.IDMerk "
+            "LEFT JOIN "
+            "    tblserietype ON tblserie.IDSerie = tblserietype.IDSerie "
+            "LEFT JOIN "
+            "    tbltype ON tblserietype.IDType = tbltype.IDType "
+            "ORDER BY strMerk ASC ";
+        qry->prepare(query);
+        qry->exec();
     }
 }
 

@@ -31,8 +31,6 @@ void MainWindow::load_table()
     model->setQuery(std::move(qry));
     ui->listViewMerken->setModel(model);
 
-
-
 }
 
 void MainWindow::showMainPage()

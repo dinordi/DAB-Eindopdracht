@@ -15,6 +15,18 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QFrame" name="menuBar">
       <property name="minimumSize">
@@ -22,6 +34,11 @@
         <width>0</width>
         <height>50</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	border:none;
+}</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -31,16 +48,16 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <property name="leftMargin">
-        <number>0</number>
+        <number>12</number>
        </property>
        <property name="topMargin">
-        <number>0</number>
+        <number>12</number>
        </property>
        <property name="rightMargin">
-        <number>0</number>
+        <number>12</number>
        </property>
        <property name="bottomMargin">
-        <number>0</number>
+        <number>12</number>
        </property>
        <item>
         <widget class="QFrame" name="frameRadio">
@@ -106,6 +123,11 @@
     </item>
     <item>
      <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">QFrame#frame{
+	border:none;
+}</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -113,6 +135,18 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="leftMargin">
+        <number>12</number>
+       </property>
+       <property name="topMargin">
+        <number>12</number>
+       </property>
+       <property name="rightMargin">
+        <number>12</number>
+       </property>
+       <property name="bottomMargin">
+        <number>12</number>
+       </property>
        <item>
         <widget class="QFrame" name="side_menu">
          <property name="minimumSize">
@@ -120,6 +154,28 @@
            <width>100</width>
            <height>0</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame{
+	border:1px solid black;
+}
+QPushButton {
+	border: 2px solid black;
+	border-radius:10px;
+background-color: #777777;
+color:white;
+}
+
+QPushButton:hover {
+	border: 2px solid rgb(144, 139, 143);
+	border-radius:10px;
+background-color: #cccccc;
+}
+QPushButton:pressed {
+	border: 2px solid rgb(50, 50, 50);
+	border-radius:10px;
+	background-color: #999999;
+}</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -191,6 +247,11 @@
           <layout class="QGridLayout" name="gridLayout_2">
            <item row="0" column="1">
             <widget class="QFrame" name="content">
+             <property name="styleSheet">
+              <string notr="true">QFrame#content{
+	border:none;
+}</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -200,6 +261,11 @@
              <layout class="QVBoxLayout" name="verticalLayout_3">
               <item>
                <widget class="QFrame" name="FrameSelect">
+                <property name="styleSheet">
+                 <string notr="true">QFrame#FrameSelect{
+	border:none;
+}</string>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -293,6 +359,11 @@
                   <height>200</height>
                  </size>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">QFrame{
+	border:none;
+}</string>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -340,6 +411,9 @@
                  </item>
                  <item>
                   <widget class="QFrame" name="frame_4">
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
